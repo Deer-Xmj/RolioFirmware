@@ -92,8 +92,14 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
     config ZMK_RGB_UNDERGLOW_AUTO_OFF_USB
         bool "Automatically turn off RGB when USB state changes"
         default y
+    config ZMK_IDLE_TIMEOUT
+        int "Time before entering sleep mode (ms)"
+        default 3000  # 空闲时进入睡眠模式的时间（毫秒）
 
-        
+    config ZMK_IDLE_SLEEP_TIMEOUT
+        int "Time before entering deep sleep mode (ms)"
+        default 4000  # 空闲时进入深度睡眠模式的时间（毫秒）
+            
     config PWM
         default y
 
