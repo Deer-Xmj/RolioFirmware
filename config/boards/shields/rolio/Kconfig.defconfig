@@ -9,7 +9,9 @@ config ZMK_SPLIT_ROLE_CENTRAL
 endif
 
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
-
+# 启用 OLED 显示支持
+config ZMK_DISPLAY
+    default y
 # 启用 I2C
 config I2C
     default y
