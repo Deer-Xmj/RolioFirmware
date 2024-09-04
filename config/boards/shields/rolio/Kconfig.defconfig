@@ -10,6 +10,33 @@ endif
 
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
 
+# 启用 I2C
+config I2C
+    default y
+
+# 启用 SSD1306 显示驱动
+config SSD1306
+    default y
+
+# LVGL 显示配置
+config LV_Z_VDB_SIZE
+    default 64
+
+config LV_DPI_DEF
+    default 148
+
+config LV_Z_BITS_PER_PIXEL
+    default 1
+
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
+
+# 启用 ZMK 自带的 LVGL 画面
+config ZMK_WIDGET_BATTERY
+    bool "Enable battery widget"
+    default y
+
 config ZMK_SPLIT
     default y
 
@@ -24,3 +51,5 @@ config LED_PWM
     default y
 
 endif # ZMK_BACKLIGHT
+
+
