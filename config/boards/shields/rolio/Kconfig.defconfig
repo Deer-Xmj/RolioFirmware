@@ -11,9 +11,7 @@ endif
 if SHIELD_ROLIO_LEFT||SHIELD_ROLIO_RIGHT
 config ZMK_SPLIT
     default y
-# 启用 USB 功能（可选）
-config ZMK_USB
-    default y
+
 # 启用蓝牙配对功能
 config BT
     default y
