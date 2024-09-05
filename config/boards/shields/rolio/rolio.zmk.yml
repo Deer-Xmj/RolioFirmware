@@ -2,7 +2,7 @@ file_format: "1"
 id: rolio
 name: Rolio
 type: shield
-url: https://github.com/MickiusMousius/rolio
+url: 
 requires: [Nice!Nano]
 exposes: [i2c_oled]
 features:
