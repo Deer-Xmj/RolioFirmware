@@ -1,8 +1,15 @@
-
-if SHIELD_A_YZ_KEYBOARD_LEFT||SHIELD_A_YZ_KEYBOARD_RIGHT
+if SHIELD_A_YZ_KEYBOARD_LEFT
     # 定义键盘名称
     config ZMK_KEYBOARD_NAME
         default "yz_rolio"
+
+    # 配置分体键盘的中心角色
+    config ZMK_SPLIT_ROLE_CENTRAL
+        default y
+
+endif
+if SHIELD_A_YZ_KEYBOARD_LEFT||SHIELD_A_YZ_KEYBOARD_RIGHT
+
     
 
     # 增大堆栈大小至4096
@@ -32,9 +39,7 @@ if SHIELD_A_YZ_KEYBOARD_LEFT||SHIELD_A_YZ_KEYBOARD_RIGHT
     config ZMK_SPLIT
         default y
 
-    # 配置分体键盘的中心角色
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default y
+
 
     # 启用 I2C
     config I2C
