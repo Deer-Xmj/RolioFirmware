@@ -6,10 +6,10 @@
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/keys.h>
-#include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/bt.h>//蓝牙功能控制按钮
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/backlight.h>
-
+#include <dt-bindings/zmk/ext_power.h>//电池管理
 
 #define MACOS     0
 #define FKEYS     1
