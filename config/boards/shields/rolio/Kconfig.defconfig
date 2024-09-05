@@ -7,6 +7,12 @@ config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
+if SHIELD_AM_HATSU_RIGHT
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default n
+
+endif
+
 
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
     
