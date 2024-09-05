@@ -70,19 +70,6 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
         default y
 
 
-    # 启用深度睡眠
-    config ZMK_SLEEP
-        bool "Enable deep sleep support"
-        default y
-    # 配置休眠和深度睡眠超时时间（单位为毫秒）
-    config ZMK_IDLE_TIMEOUT
-        int "Time before entering sleep mode (ms)"
-        default 3000  # 
-
-    config ZMK_IDLE_SLEEP_TIMEOUT
-        int "Time before entering deep sleep mode (ms)"
-        default 1000  # 
-
     # 自动关闭空闲时灯光
     config ZMK_RGB_UNDERGLOW_AUTO_OFF_IDLE
         bool "Automatically turn off RGB when idle"
