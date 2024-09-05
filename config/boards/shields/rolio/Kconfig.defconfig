@@ -7,19 +7,15 @@ config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
-
 if SHIELD_ROLIO_RIGHT
+config ZMK_SPLIT_BLE_ROLE_CENTRAL
+	default n
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default n
-    # 启用蓝牙自动连接功能
-config CONFIG_BT_AUTO_CONNECT
-    default y
 endif
 
 
-
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
+    
 
     # 增大堆栈大小至4096
     config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
@@ -46,6 +42,10 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
 
     # 启用分体键盘支持
     config ZMK_SPLIT
+        default y
+
+    # 配置分体键盘的中心角色
+    config ZMK_SPLIT_ROLE_CENTRAL
         default y
 
     # 启用 I2C
@@ -113,4 +113,3 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
         default y
 
 endif # ZMK_BACKLIGHT
-
