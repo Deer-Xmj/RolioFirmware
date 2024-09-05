@@ -3,19 +3,15 @@ if SHIELD_ROLIO_LEFT
 config ZMK_KEYBOARD_NAME
     default "yz_rolio"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+
 
 endif
-if SHIELD_ROLIO_RIGHT
-config ZMK_SPLIT_BLE_ROLE_CENTRAL
-	default n
 
-endif
 
 
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
-    
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
 
     # 增大堆栈大小至4096
     config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
