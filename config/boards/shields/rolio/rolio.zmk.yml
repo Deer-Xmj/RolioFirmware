@@ -7,9 +7,9 @@ requires: [Nice!Nano]
 exposes: [i2c_oled]
 features:
   - keys
+  - display
   - encoder
   - backlight
-  - display
 siblings:
   - rolio_left
   - rolio_right
