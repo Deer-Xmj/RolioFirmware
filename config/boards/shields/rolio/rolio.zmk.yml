@@ -3,7 +3,8 @@ id: rolio
 name: Rolio
 type: shield
 url: https://github.com/MickiusMousius/rolio
-requires: [pro_micro]
+requires: [Nice!Nano]
+exposes: [i2c_oled]
 features:
   - keys
   - encoder
