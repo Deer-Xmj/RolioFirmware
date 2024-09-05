@@ -18,7 +18,23 @@ config I2C
 
 config SSD1306
     default y
+    # 启用蓝牙功能
+    config ZMK_BLE
+        default y
+    
+# 启用蓝牙配对功能
+config BT
+    default y
+config BT_PERIPHERAL
+    default y
 
+# 启用 USB 功能（可选）
+config ZMK_USB
+    default y
+
+# 启用分体键盘支持
+config ZMK_SPLIT
+    default y
 endif # ZMK_DISPLAY
 
 if LVGL
