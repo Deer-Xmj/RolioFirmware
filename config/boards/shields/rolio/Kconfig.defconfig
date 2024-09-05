@@ -11,71 +11,35 @@ endif
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
     
 
-    # 增大堆栈大小至4096
-    config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
-        int "Stack size for dedicated UI thread/queue"
-        default 4096
+  config ZMK_SPLIT
+    default y
 
-    # 启用 OLED 显示支持
-    config ZMK_DISPLAY
-        default y
-    
-    # 启用蓝牙功能
-    config ZMK_BLE
-        default y
-    
-    # 启用蓝牙配对功能
-    config BT
-        default y
-    config BT_PERIPHERAL
-        default y
+if ZMK_DISPLAY
 
-    # 启用 USB 功能（可选）
-    config ZMK_USB
-        default y
+config I2C
+    default y
 
-    # 启用分体键盘支持
-    config ZMK_SPLIT
-        default y
+config SSD1306
+    default y
 
-    # 配置分体键盘的中心角色
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default y
+endif # ZMK_DISPLAY
 
-    # 启用 I2C
-    config I2C
-        default y
+if LVGL
 
-    # 启用 SSD1306 显示驱动
-    config SSD1306
-        default y
+config LV_Z_VDB_SIZE
+    default 64
 
-    # LVGL 显示配置
-    config LV_Z_VDB_SIZE
-        default 64
+config LV_DPI_DEF
+    default 148
 
-    config LV_DPI_DEF
-        default 148
+config LV_Z_BITS_PER_PIXEL
+    default 1
 
-    config LV_Z_BITS_PER_PIXEL
-        default 1
+choice LV_COLOR_DEPTH
+    default LV_COLOR_DEPTH_1
+endchoice
 
-    choice LV_COLOR_DEPTH
-        default LV_COLOR_DEPTH_1
-    endchoice
-
-    # 启用 ZMK 自带的 LVGL 画面
-    config ZMK_WIDGET_BATTERY
-        bool "Enable battery widget"
-        default y
-
-
-            
-    config PWM
-        default y
-
-    config LED_PWM
-        default y
+endif # LVGL
 
 endif # ZMK_BACKLIGHT
 
