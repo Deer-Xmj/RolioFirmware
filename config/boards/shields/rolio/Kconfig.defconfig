@@ -1,47 +1,110 @@
 if SHIELD_ROLIO_LEFT
-    # 定义键盘名称
-    config ZMK_KEYBOARD_NAME
-        default "yz_rolio"
+
+config ZMK_KEYBOARD_NAME
+    default "yz_rolio"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+endif
+
+if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
+    
+
+    # 增大堆栈大小至4096
+    config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
+        int "Stack size for dedicated UI thread/queue"
+        default 4096
+
+    # 启用 OLED 显示支持
+    config ZMK_DISPLAY
+        default y
+    
+    # 启用蓝牙功能
+    config ZMK_BLE
+        default y
+    
+    # 启用蓝牙配对功能
+    config BT
+        default y
+    config BT_PERIPHERAL
+        default y
+
+    # 启用 USB 功能（可选）
+    config ZMK_USB
+        default y
+
+    # 启用分体键盘支持
+    config ZMK_SPLIT
+        default y
 
     # 配置分体键盘的中心角色
     config ZMK_SPLIT_ROLE_CENTRAL
         default y
 
-endif
-if SHIELD_ROLIO_LEFT||SHIELD_ROLIO_RIGHT
-config ZMK_SPLIT
-    default y
+    # 启用 I2C
+    config I2C
+        default y
 
-# 启用蓝牙配对功能
-config BT
-    default y
-config BT_PERIPHERAL
-    default y
-if ZMK_DISPLAY
+    # 启用 SSD1306 显示驱动
+    config SSD1306
+        default y
 
-config I2C
-    default y
+    # LVGL 显示配置
+    config LV_Z_VDB_SIZE
+        default 64
 
-config SSD1306
-    default y
+    config LV_DPI_DEF
+        default 148
 
-endif # ZMK_DISPLAY
+    config LV_Z_BITS_PER_PIXEL
+        default 1
 
-if LVGL
+    choice LV_COLOR_DEPTH
+        default LV_COLOR_DEPTH_1
+    endchoice
 
-config LV_Z_VDB_SIZE
-    default 64
+    # 启用 ZMK 自带的 LVGL 画面
+    config ZMK_WIDGET_BATTERY
+        bool "Enable battery widget"
+        default y
 
-config LV_DPI_DEF
-    default 148
 
-config LV_Z_BITS_PER_PIXEL
-    default 1
+    # 启用深度睡眠
+    config ZMK_SLEEP
+        bool "Enable deep sleep support"
+        default y
+    # 配置休眠和深度睡眠超时时间（单位为毫秒）
+    config ZMK_IDLE_TIMEOUT
+        int "Time before entering sleep mode (ms)"
+        default 3000  # 
 
-choice LV_COLOR_DEPTH
-    default LV_COLOR_DEPTH_1
-endchoice
+    config ZMK_IDLE_SLEEP_TIMEOUT
+        int "Time before entering deep sleep mode (ms)"
+        default 1000  # 
 
-endif # LVGL
+    # 自动关闭空闲时灯光
+    config ZMK_RGB_UNDERGLOW_AUTO_OFF_IDLE
+        bool "Automatically turn off RGB when idle"
+        default y
 
-endif
+    # 自动关闭 USB 连接变化时灯光
+    config ZMK_RGB_UNDERGLOW_AUTO_OFF_USB
+        bool "Automatically turn off RGB when USB state changes"
+        default y
+    config ZMK_IDLE_TIMEOUT
+        int "Time before entering sleep mode (ms)"
+        default 3000  # 空闲时进入睡眠模式的时间（毫秒）
+
+    config ZMK_IDLE_SLEEP_TIMEOUT
+        int "Time before entering deep sleep mode (ms)"
+        default 4000  # 空闲时进入深度睡眠模式的时间（毫秒）
+            
+    config PWM
+        default y
+
+    config LED_PWM
+        default y
+
+endif # ZMK_BACKLIGHT
+
