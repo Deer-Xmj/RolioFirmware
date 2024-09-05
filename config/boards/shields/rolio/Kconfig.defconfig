@@ -7,12 +7,14 @@ config ZMK_SPLIT_ROLE_CENTRAL
     default y
 
 endif
+
 if SHIELD_ROLIO_RIGHT
+
 config ZMK_SPLIT_ROLE_CENTRAL
     default n
     # 启用蓝牙自动连接功能
-    config CONFIG_BT_AUTO_CONNECT
-        default y
+config CONFIG_BT_AUTO_CONNECT
+    default y
 endif
 
 
