@@ -1,26 +1,29 @@
 if SHIELD_ROLIO_LEFT
 
-config ZMK_KEYBOARD_NAME
-    default "yz_rolio_left"
+#config ZMK_KEYBOARD_NAME
+#    default "yz_rolio_left"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+#config ZMK_SPLIT_ROLE_CENTRAL
+#    default y
 
 endif
 if SHIELD_ROLIO_RIGHT
-config ZMK_KEYBOARD_NAME
-    default "yz_rolio_right"
+#config ZMK_KEYBOARD_NAME
+#    default "yz_rolio_right"
 
-config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+#config ZMK_SPLIT_ROLE_CENTRAL
+#    default y
 
 
 endif
 
 
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
+config ZMK_KEYBOARD_NAME
+    default "yz_rolio"
 
-
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
     # 增大堆栈大小至4096
     config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
         int "Stack size for dedicated UI thread/queue"
