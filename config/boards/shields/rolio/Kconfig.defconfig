@@ -26,18 +26,11 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
         int "Stack size for dedicated UI thread/queue"
         default 4096
 
-    # 启用 OLED 显示支持
-    config ZMK_DISPLAY
-        default y
-
 
     # 启用分体键盘支持
     config ZMK_SPLIT
         default y
 
-    # 配置分体键盘的中心角色
-    config ZMK_SPLIT_ROLE_CENTRAL
-        default y
 
     # 启用 I2C
     config I2C
