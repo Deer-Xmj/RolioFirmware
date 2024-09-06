@@ -12,7 +12,7 @@ config ZMK_KEYBOARD_NAME
     default "yz_rolio_right"
 
 config ZMK_SPLIT_ROLE_CENTRAL
-    default y
+    default n
 
 
 endif
