@@ -306,7 +306,7 @@
             bindings = <
 //---------------------------------------------------------------+                            +---------------------------------------------------------------//
 //          |         |          |           |          |        |                            |       |       |           |         |          |           // 
-  &kp GRAVE   &kp Q     &bt BT_CLR  &kp E  &bt BT_CLR_ALL &bt BT_NXT                            &kp Y   &kp U     &kp I      &kp O     &kp P     &backspace_word 0 BSPC
+  &kp GRAVE   &kp Q     &bt BT_CLR  &kp E  &bt BT_CLR_ALL &bt BT_NXT                            &bt BT_CLR_ALL   &bt BT_CLR_ALL     &bt BT_CLR_ALL     &bt BT_CLR_ALL     &kp P     &backspace_word 0 BSPC
 //          |         |          |           |          |        |                            |       |       |           |         |          |           //
   &kp TAB     &kp A     &kp S      &kp D        &kp F     &kp G                               &kp H   &kp J     &kp K      &kp L    &kp SEMI    &kp SQT
 //          |         |          |           |          |        +-----------+    +-----------|       |       |           |         |          |           //
