@@ -67,6 +67,16 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
     config IL0323
         default y
 
+    config ZMK_DISPLAY_BLANK_ON_IDLE
+        default y
+    # Needed for the IL0323 driver which allocs memory to clear the display
+    config HEAP_MEM_POOL_SIZE
+        default 1024
+    
+     config LV_Z_MEM_POOL_SIZE
+         default 4096
+
+
     # 启用 ZMK 自带的 LVGL 画面
     config ZMK_WIDGET_BATTERY
         bool "Enable battery widget"
