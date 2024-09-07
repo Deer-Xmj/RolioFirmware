@@ -5,6 +5,9 @@
 };
 
 /{
+    chosen {
+        zephyr,display = &epd;
+    };
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
         label = "KSCAN";
