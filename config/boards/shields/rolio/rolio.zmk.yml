@@ -7,7 +7,6 @@ requires: [Nice!Nano]
 exposes: [i2c_oled]
 features:
   - keys
-  - display
   - encoder
   - backlight
   - underglow
