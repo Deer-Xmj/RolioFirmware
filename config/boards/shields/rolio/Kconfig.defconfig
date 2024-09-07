@@ -62,13 +62,6 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
         default LV_COLOR_DEPTH_1
     endchoice
 
-    config SPI
-        default y
-    
-    config IL0323
-        default y
-
-
 
 
     # 启用 ZMK 自带的 LVGL 画面
