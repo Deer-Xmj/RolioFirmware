@@ -10,6 +10,7 @@ features:
   - encoder
   - backlight
   - underglow
+  - display
 siblings:
   - rolio_left
   - rolio_right
