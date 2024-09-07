@@ -1,4 +1,5 @@
 #include "rolio.dtsi"
+#include <dt-bindings/led/led.h>
 /{
     kscan0: kscan {
         compatible = "zmk,kscan-gpio-matrix";
