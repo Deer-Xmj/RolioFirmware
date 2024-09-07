@@ -40,12 +40,12 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
 
 
     # 启用 I2C
-    config I2C
-        default y
+    #config I2C
+    #    default y
 
     # 启用 SSD1306 显示驱动
-    config SSD1306
-        default y
+    #config SSD1306
+    #    default y
 
     # LVGL 显示配置
     config LV_Z_VDB_SIZE
@@ -61,11 +61,11 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
         default LV_COLOR_DEPTH_1
     endchoice
 
-    #config SPI
-    #    default y
+    config SPI
+        default y
     
-    #config IL0323
-    #    default y
+    config IL0323
+        default y
 
     # 启用 ZMK 自带的 LVGL 画面
     config ZMK_WIDGET_BATTERY
