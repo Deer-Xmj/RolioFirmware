@@ -32,14 +32,8 @@ if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
     config ZMK_DISPLAY_DEDICATED_THREAD_STACK_SIZE
         int "Stack size for dedicated UI thread/queue"
         default 4096
-    config ZMK_DISPLAY_BLANK_ON_IDLE
-        default y
-    # Needed for the IL0323 driver which allocs memory to clear the display
-    config HEAP_MEM_POOL_SIZE
-        default 1024
 
-     config LV_Z_MEM_POOL_SIZE
-         default 4096
+
 
     # 启用分体键盘支持
     config ZMK_SPLIT
