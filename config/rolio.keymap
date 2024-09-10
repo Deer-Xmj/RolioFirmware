@@ -395,7 +395,7 @@
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
 &kp GRAVE  &kp Q  &bt BT_CLR  &kp E      &bt BT_CLR_ALL  &bt BT_NXT                        &bt BT_CLR_ALL  &kp A  &kp S      &kp D    &kp P     &backspace_word 0 BSPC
-&kp TAB    &kp A  &kp S       &kp D      &kp F           &kp G                             &kp H           &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
+&Ctrl_C    &Ctrl_V  &TEST_Str      &kp D      &kp F           &kp G                             &kp H           &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
 &td2       &kp Z  &kp X       &kp C      &kp V           &kp B       &kp F16    &kp F17    &kp N           &kp M  &kp COMMA  &kp DOT  &kp FSLH  &td3
                   &kp LALT    &kp LCTRL  &td4            &td0        &kp ENTER  &kp SPACE  &td1            &td5   &kp RCTRL  &kp DEL
             >;
