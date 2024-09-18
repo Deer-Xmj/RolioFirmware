@@ -15,28 +15,27 @@
 
 
 
-    behaviors {
-    }
-    macros {
-        td0:td0{
-                label = "qiehuan_MACOS";
-                compatible = "zmk,behavior-macro";
-                #binding-cells = <0>;
-                bindings
-                    = <&macro_tap &tog MACOS>
-                    , <&macro_tap &tog FKEYS>
-                    ;
-        };
-        // td1:td1{
-        //         label = "qiehuan_FKEYS";
-        //         compatible = "zmk,behavior-macro";
-        //         #binding-cells = <0>;
-        //         bindings
-        //             = <&macro_tap &tog FKEYS>
-        //             , <&macro_tap &tog MACOS>
-        //             ;
-        // };
-    }
+
+    // macros {
+    //     td0:td0{
+    //             label = "qiehuan_MACOS";
+    //             compatible = "zmk,behavior-macro";
+    //             #binding-cells = <0>;
+    //             bindings
+    //                 = <&macro_tap &tog MACOS>
+    //                 , <&macro_tap &tog FKEYS>
+    //                 ;
+    //     };
+    //     td1:td1{
+    //             label = "qiehuan_FKEYS";
+    //             compatible = "zmk,behavior-macro";
+    //             #binding-cells = <0>;
+    //             bindings
+    //                 = <&macro_tap &tog FKEYS>
+    //                 , <&macro_tap &tog MACOS>
+    //                 ;
+    //     };
+    // }
 
     keymap {
         compatible = "zmk,keymap";
