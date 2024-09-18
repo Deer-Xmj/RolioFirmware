@@ -11,11 +11,6 @@
 #define L2     2
 #define L3     3
 / {
-
-
-
-
-
     // macros {
     //     td0:td0{
     //             label = "qiehuan_MACOS";
@@ -52,7 +47,7 @@
 //          |         |          |           |          |        +-----------+    +-----------|           |       |           |         |          |           //
     &kp A     &kp Z     &kp X      &kp C        &kp V     &kp B     &kp F16          &kp F17    &kp N   &kp M   &kp COMMA   &kp DOT    &kp FSLH     &kp G
 //--------------------|          |           |          |        |           |    |           |           |       |           |--------------------------------//  
-                        &kp LALT   &kp LCTRL     &kp A    &kp A    &kp A        &kp SPACE   &kp G    &kp G    &kp RCTRL   &kp DEL
+                        &kp LALT   &kp LCTRL     &mo 1     &mo 2     &mo 3         &kp SPACE   &kp G    &kp G    &kp RCTRL   &kp DEL
 //                    +----------|-----------|----------|--------------------+    +-----------|-----------|--------|-----------|---------+                      //
             >;
         };
