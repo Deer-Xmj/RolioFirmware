@@ -306,7 +306,7 @@
 //          |         |          |           |          |        +-----------+    +-----------|           |       |           |         |          |           //
     &kp A     &kp Z     &kp X      &kp C        &kp V     &kp B     &kp F16          &kp F17    &kp N   &kp M   &kp COMMA   &kp DOT    &kp FSLH     &kp G
 //--------------------|          |           |          |        |           |    |           |           |       |           |--------------------------------//  
-                        &kp LALT   &kp LCTRL     &kp A     &kp A     &tog FKEYS        &kp SPACE   &kp G    &kp G    &kp RCTRL   &kp DEL
+                        &kp LALT   &kp LCTRL     &kp A    &tog KB_CONFIG &tog FKEYS        &kp SPACE   &kp G    &kp G    &kp RCTRL   &kp DEL
 //                    +----------|-----------|----------|--------------------+    +-----------|-----------|--------|-----------|---------+                      //
             >;
         };
