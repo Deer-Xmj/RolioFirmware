@@ -38,7 +38,7 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&mo FKEYS>, <&tog FKEYS>, <&tog KB_CtONFIG>;
+            bindings = <&mo FKEYS>, <&tog FKEYS>, <&tog KB_CONFIG>;
         };
         // Toggle Numbers layer
         td1: tap_dance_1 {
