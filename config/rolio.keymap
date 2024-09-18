@@ -18,17 +18,17 @@
 
 / {
 
-    // conditional_layers {
-    //     compatible = "zmk,conditional-layers";
-    //     win_fkeys {
-    //         if-layers = <WINDOWS FKEYS>;
-    //         then-layer = <W_FKEYS>;
-    //     };
-    //     win_numbers {
-    //         if-layers = <WINDOWS NUMBERS>;
-    //         then-layer = <W_NUMBERS>;
-    //     };
-    // };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+        win_fkeys {
+            if-layers = <WINDOWS FKEYS>;
+            then-layer = <W_FKEYS>;
+        };
+        win_numbers {
+            if-layers = <WINDOWS NUMBERS>;
+            then-layer = <W_NUMBERS>;
+        };
+    };
 
 
     behaviors {
@@ -38,7 +38,7 @@
             label = "TAP_DANCE_0";
             #binding-cells = <0>;
             tapping-term-ms = <300>;
-            bindings = <&mo FKEYS>, <&tog FKEYS>, <&tog KB_CtONFIG>;
+            bindings = <&mo FKEYS>, <&tog FKEYS>, <&tog KB_CONFIG>;
         };
         // Toggle Numbers layer
         td1: tap_dance_1 {
@@ -294,7 +294,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {//0
+        default_layer {
             label = "Mac OS";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
@@ -302,16 +302,16 @@
 //          |         |          |           |          |        |                            |           |       |           |         |          |           // 
   &kp GRAVE   &kp Q     &bt BT_CLR  &kp E  &bt BT_CLR_ALL &bt BT_NXT                           &bt BT_CLR_ALL   &kp A   &kp S  &kp D   &kp P     &backspace_word 0 BSPC
 //          |         |          |           |          |        |                            |           |       |           |         |          |           //
-    &kp A    &kp A     &kp S      &kp D        &kp F     &kp G                               &kp H   &kp J     &kp K      &kp L    &kp SEMI    &kp SQT
+  &kp TAB     &kp A     &kp S      &kp D        &kp F     &kp G                               &kp H   &kp J     &kp K      &kp L    &kp SEMI    &kp SQT
 //          |         |          |           |          |        +-----------+    +-----------|           |       |           |         |          |           //
-    &kp A     &kp Z     &kp X      &kp C        &kp V     &kp B     &kp F16          &kp F17    &kp N   &kp M   &kp COMMA   &kp DOT    &kp FSLH     &kp G
+    &td2      &kp Z     &kp X      &kp C        &kp V     &kp B     &kp F16          &kp F17    &kp N   &kp M   &kp COMMA   &kp DOT    &kp FSLH     &td3
 //--------------------|          |           |          |        |           |    |           |           |       |           |--------------------------------//  
-                        &kp LALT   &kp LCTRL     &kp A     &kp A     &tog FKEYS        &kp SPACE   &kp G    &kp G    &kp RCTRL   &kp DEL
+                        &kp LALT   &kp LCTRL     &td4     &td0     &kp ENTER        &kp SPACE   &td1    &td5    &kp RCTRL   &kp DEL
 //                    +----------|-----------|----------|--------------------+    +-----------|-----------|--------|-----------|---------+                      //
             >;
         };
 
-        f_keys_layer {//1
+        f_keys_layer {
             label = "F Keys";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &mac_zoom>;
             bindings = <
@@ -323,13 +323,13 @@
 //          |            |            |              |            |              +-------------+    +--------+          |          |           |         |           |           // 
     &trans    &bl BL_TOG  &bl BL_SET 2  &kp C_VOL_DN   &kp C_MUTE   &kp C_VOL_UP    &kp C_MUTE     &reset_zoom &kp LEFT   &kp DOWN   &kp RIGHT   &scrcr    &kp PG_DN   &kp F13
 //-----------------------|            |              |            |              |             |    |        |          |          |           |         |-----------------------//  
-                            &trans         &trans       &trans      &tog MACOS   &tog NUMBERS            &trans    &trans    &trans      &trans     &trans
+                            &trans         &trans       &trans        &trans        &trans            &trans    &trans    &trans      &trans     &trans
 //                       +------------|--------------|------------|--------------|-------------+    +--------|----------|----------|-----------|---------+                       //
             >;
 
         };
 
-        numbers_layer {//2
+        numbers_layer {
             label = "Numbers";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
@@ -341,12 +341,12 @@
 //          |          |                |                 |          |           +--------+     +-------|           |               |                     |               |          // 
    &trans       &pal     &kp LEFT_BRACE   &kp RIGHT_BRACE   &kp PIPE   &kp EQUAL   &trans        &trans   &kp MINUS     &kp PLUS      &kp LBKT   &kp RBKT   &kp BACKSLASH   &kp DOT
 //---------------------|                |                 |          |           |        |    |                    |               |          |          |--------------------------//
-                            &trans            &trans         &trans    &tog FKEYS  &tog WINDOWS        &trans    &trans       &trans         &trans     &trans
+                            &trans            &trans         &trans     &trans     &trans        &trans    &trans       &trans         &trans     &trans
 //                     +----------------|-----------------|----------|-----------|--------+    +--------|----------|----------------|----------|----------+                          //
             >;
         };
 
-        windows_default_layer {//3
+        windows_default_layer {
             label = "Windows";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
@@ -358,12 +358,12 @@
 //          |          |          |          |          |          +--------+     +---------|          |          |          |          |          |           // 
     &trans     &trans     &trans     &trans     &trans     &trans    &trans         &trans     &trans     &trans     &trans     &trans     &trans     &trans
 //---------------------|          |          |          |          |        |     |         |          |          |          |          |----------------------//
-                          &trans     &trans     &trans     &tog NUMBERS  &tog W_FKEYS &trans     &trans     &trans     &trans     &trans
+                          &trans     &trans     &trans     &trans    &trans         &trans     &trans     &trans     &trans     &trans
 //                     +----------|----------|----------|----------|--------+     +----------|---------|----------|----------|----------+                      //
             >;
         };
 
-        windows_fkeys_layer {//4
+        windows_fkeys_layer {
             label = "F Keys";
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN &win_zoom>;
             bindings = <
@@ -375,12 +375,12 @@
 //          |          |          |          |          |          +--------+     +---------|          |          |          |          |          |           // 
     &trans     &trans     &trans     &trans     &trans     &trans    &trans      &w_reset_zoom &trans     &trans     &trans     &wscrcr    &trans     &trans
 //---------------------|          |          |          |          |        |     |         |          |          |          |          |----------------------//
-                          &trans     &trans     &trans   &tog WINDOWS  &tog W_NUMBERS  &trans     &trans     &trans     &trans     &trans
+                          &trans     &trans     &trans     &trans    &trans         &trans     &trans     &trans     &trans     &trans
 //                     +----------|----------|----------|----------|--------+     +----------|---------|----------|----------|----------+                      //
             >;
         };
 
-        windows_numbers_layer {//5
+        windows_numbers_layer {
             label = "Numbers";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
@@ -392,12 +392,12 @@
 //          |          |          |          |          |          +--------+     +---------|          |          |          |          |          |           // 
     &trans     &wpal      &trans     &trans     &trans     &trans    &trans         &trans     &trans     &trans     &trans     &trans     &trans     &trans
 //---------------------|          |          |          |          |        |     |         |          |          |          |          |----------------------//
-                          &trans     &trans     &trans     &tog W_FKEYS  &tog MATHS   &trans     &trans     &trans     &trans     &trans
+                          &trans     &trans     &trans     &trans    &trans         &trans     &trans     &trans     &trans     &trans
 //                     +----------|----------|----------|----------|--------+     +---------|----------|----------|----------|----------+                      //
             >;
         };
 
-        maths_layer {//6
+        maths_layer {
             label = "Maths";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
@@ -409,12 +409,12 @@
 //          |          |          |          |          |          +--------+     +---------|           |               |          |          |               |          // 
     &trans     &wpal      &trans     &trans     &trans   &kp EQUAL   &trans         &trans    &kp MINUS      &kp PLUS      &trans     &trans       &trans       &kp DOT
 //---------------------|          |          |          |          |        |     |         |           |               |          |          |--------------------------//
-                          &trans     &trans     &trans    &tog W_NUMBERS  &tog KB_CONFIG   &trans   &tog MATHS        &trans       &trans     &trans
+                          &trans     &trans     &trans     &trans    &trans         &trans   &tog MATHS        &trans       &trans     &trans
 //                     +----------|----------|----------|----------|--------+     +---------|-----------|---------------|----------|----------+                          //
             >;
       };
 
-        settings_layer {//7
+        settings_layer {
             label = "Settings";
             sensor-bindings = <&inc_dec_kp UP DOWN &inc_dec_kp LEFT RIGHT>;
             bindings = <
@@ -426,7 +426,7 @@
 //          |              |              |              |              |                +--------+     +---------|          |          |          |          |          |           // 
     &trans       &trans       &bt BT_CLR     &bl BL_DEC    &bl BL_TOG      &bl BL_INC      &trans         &trans     &trans     &trans     &trans     &trans     &trans     &trans
 //-------------------------|              |              |              |                |        |     |         |          |          |          |          |----------------------//
-                               &trans          &trans         &trans      &tog MATHS   &tog MACOS         &trans     &trans     &trans     &trans     &trans
+                               &trans          &trans         &trans      &tog KB_CONFIG   &trans         &trans     &trans     &trans     &trans     &trans
 //                         +--------------|--------------|--------------|----------------|--------+     +----------|---------|----------|----------|----------+                      //
             >;
         };
