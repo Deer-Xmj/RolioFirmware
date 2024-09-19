@@ -1,7 +1,7 @@
 if SHIELD_ROLIO_LEFT
 
 config ZMK_KEYBOARD_NAME
-    default "yz_rolio_left"
+    default "rolio"
 
 config ZMK_SPLIT_ROLE_CENTRAL
     default y
@@ -20,7 +20,7 @@ endif
 
 if SHIELD_ROLIO_LEFT || SHIELD_ROLIO_RIGHT
     #config ZMK_KEYBOARD_NAME
-    #    default "yz_rolio"
+    #    default "rolio"
     
     #config ZMK_SPLIT_ROLE_CENTRAL
     #    default y
