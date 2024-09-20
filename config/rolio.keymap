@@ -7,7 +7,7 @@
 #include <dt-bindings/zmk/rgb.h>
 
 #define MACOS     0
-#define FKEYS     1
+#define FKEYS     1 
 #define NUMBERS   2
 #define WINDOWS   3
 #define W_FKEYS   4
